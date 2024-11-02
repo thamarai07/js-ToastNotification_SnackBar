@@ -1,10 +1,31 @@
 <!DOCTYPE html>
 <html>
-    <head>
-        <link rel="stylesheet" href="style.css">
-    </head>
-    <body>
-        
-    </body>
-    
+  <head>
+    <link rel="stylesheet" href="style.css" />
+  </head>
+    <div class="button__container">
+      <button onclick="handletoast('success')">Success</button>
+      <button onclick="handletoast('invalid')">Invalid</button>
+      <button onclick="handletoast('error')">Error</button>
+    </div>
+    <div class="toast"></div>
+    <script>
+      const toast = document.querySelector(".toast")
+
+      function handletoast(msg) {
+        const div = document.createElement('div');
+        div.innerHTML = msg;
+            if (msg.includes("success")) {
+                div.classList = "success";
+             } else if (msg.includes("invalid")) {
+                div.classList = "invalid";
+             } else {
+                div.classList = "error";
+                 }
+            toast.appendChild(div);
+                setTimeout(()=>div.remove(),10000)
+        }
+
+    </script>
+  </body>
 </html>

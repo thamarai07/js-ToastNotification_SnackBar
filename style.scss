@@ -1,0 +1,74 @@
+* {
+    margin: 0;
+    padding: 0;
+    font-family: "Poppins", sans-serif;
+    box-sizing: border-box;
+    overflow: hidden; /* Keep this if needed globally */
+}
+
+.button__container {
+    width: 100%;
+    
+    button {
+        width: 120px;
+        margin: 20px 30px;
+        border: none;
+        outline: none;
+        color: white;
+        padding: 10px 20px;
+        border-radius: 4px;
+        box-shadow: 0px 0px 2px black;
+        cursor: pointer;
+
+        &:nth-child(1) {
+            background: green;
+        }
+        &:nth-child(2) {
+            background: orange;
+        }
+        &:nth-child(3) {
+            background: red;
+        }
+    }
+}
+
+.toast {
+    overflow: visible; /* Allow overflow for this specific element */
+    position: absolute;
+    bottom: 20px;
+    right: 30px;
+    transform: translateX(100%); /* Start off-screen to the right */
+
+    div {
+        width: 400px;
+        color: white;
+        padding: 10px;
+        text-align: center;
+        margin: 10px;
+        transition: transform 0.5s ease; /* Smooth transition for transform */
+        animation: movetoleft 0.5s linear forwards;
+    }
+    
+
+    div.success {
+        background-color: green;
+        
+    }
+
+    div.invalid {
+        background-color: orange;
+    }
+
+    div.error {
+        background-color: red;
+    }
+
+    @keyframes movetoleft {
+        10%{
+            transform: translateX(0%); 
+        }
+        100%{
+            transform: translateX(-100%); 
+        }
+    }
+}

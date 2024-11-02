@@ -1,0 +1,65 @@
+* {
+  margin: 0;
+  padding: 0;
+  font-family: "Poppins", sans-serif;
+  box-sizing: border-box;
+  overflow: hidden; /* Keep this if needed globally */
+}
+
+.button__container {
+  width: 100%;
+}
+.button__container button {
+  width: 120px;
+  margin: 20px 30px;
+  border: none;
+  outline: none;
+  color: white;
+  padding: 10px 20px;
+  border-radius: 4px;
+  box-shadow: 0px 0px 2px black;
+  cursor: pointer;
+}
+.button__container button:nth-child(1) {
+  background: green;
+}
+.button__container button:nth-child(2) {
+  background: orange;
+}
+.button__container button:nth-child(3) {
+  background: red;
+}
+
+.toast {
+  overflow: visible; /* Allow overflow for this specific element */
+  position: absolute;
+  bottom: 20px;
+  right: 30px;
+  transform: translateX(100%); /* Start off-screen to the right */
+}
+.toast div {
+  width: 400px;
+  color: white;
+  padding: 10px;
+  text-align: center;
+  margin: 10px;
+  transition: transform 0.5s ease; /* Smooth transition for transform */
+  animation: movetoleft 0.5s linear forwards;
+}
+.toast div.success {
+  background-color: green;
+}
+.toast div.invalid {
+  background-color: orange;
+}
+.toast div.error {
+  background-color: red;
+}
+@keyframes movetoleft {
+  10% {
+    transform: translateX(0%);
+  }
+  100% {
+    transform: translateX(-100%);
+  }
+}/*# sourceMappingURL=style.css.map */
