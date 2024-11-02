@@ -39,7 +39,6 @@
 }
 .toast div {
   width: 400px;
-  color: white;
   padding: 10px;
   text-align: center;
   margin: 10px;
@@ -47,13 +46,49 @@
   animation: movetoleft 0.5s linear forwards;
 }
 .toast div.success {
-  background-color: green;
+  background-color: rgb(255, 255, 255);
+  box-shadow: 0px 0px 3px black;
+}
+.toast div.success::after {
+  content: "";
+  position: absolute;
+  height: 4px;
+  bottom: 0;
+  width: 100%;
+  left: 0;
+  background-color: rgb(31, 255, 80);
+  transition: width 0.4s ease;
+  animation: lineoftoast 5s linear forwards;
 }
 .toast div.invalid {
-  background-color: orange;
+  background-color: rgb(255, 255, 255);
+  box-shadow: 0px 0px 3px black;
+}
+.toast div.invalid::after {
+  content: "";
+  position: absolute;
+  height: 4px;
+  bottom: 0;
+  width: 100%;
+  left: 0;
+  background-color: rgb(203, 145, 38);
+  transition: width 0.4s ease;
+  animation: lineoftoast 5s linear forwards;
 }
 .toast div.error {
+  background-color: rgb(255, 255, 255);
+  box-shadow: 0px 0px 3px black;
+}
+.toast div.error::after {
+  content: "";
+  position: absolute;
+  height: 4px;
+  bottom: 0;
+  width: 100%;
+  left: 0;
   background-color: red;
+  transition: width 0.4s ease;
+  animation: lineoftoast 5s linear forwards;
 }
 @keyframes movetoleft {
   10% {
@@ -61,5 +96,13 @@
   }
   100% {
     transform: translateX(-100%);
+  }
+}
+@keyframes lineoftoast {
+  0% {
+    width: 100%;
+  }
+  100% {
+    width: 0%;
   }
 }/*# sourceMappingURL=style.css.map */

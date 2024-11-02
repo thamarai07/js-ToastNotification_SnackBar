@@ -8,7 +8,7 @@
 
 .button__container {
     width: 100%;
-    
+
     button {
         width: 120px;
         margin: 20px 30px;
@@ -41,34 +41,80 @@
 
     div {
         width: 400px;
-        color: white;
         padding: 10px;
         text-align: center;
         margin: 10px;
         transition: transform 0.5s ease; /* Smooth transition for transform */
         animation: movetoleft 0.5s linear forwards;
     }
-    
 
     div.success {
-        background-color: green;
+        background-color: rgb(255, 255, 255);
+        box-shadow: 0px 0px 3px black;
+        &::after {
+            content: "";
+            position: absolute;
+            height: 4px;
+            bottom: 0;
+            width: 100%;
+            left: 0;
+            background-color: rgb(31, 255, 80);
+            transition: width 0.4s ease;
+            animation: lineoftoast 5s linear forwards;
+        }
         
     }
 
     div.invalid {
-        background-color: orange;
+        background-color: rgb(255, 255, 255);
+        box-shadow: 0px 0px 3px black;
+
+        &::after {
+            content: "";
+            position: absolute;
+            height: 4px;
+            bottom: 0;
+            width: 100%;
+            left: 0;
+            background-color: rgb(203, 145, 38);
+
+            transition: width 0.4s ease;
+            animation: lineoftoast 5s linear forwards;
+        }
     }
 
     div.error {
-        background-color: red;
+        background-color: rgb(255, 255, 255);
+        box-shadow: 0px 0px 3px black;
+
+        &::after {
+            content: "";
+            position: absolute;
+            height: 4px;
+            bottom: 0;
+            width: 100%;
+            left: 0;
+            background-color: red;
+
+            transition: width 0.4s ease;
+            animation: lineoftoast 5s linear forwards;
+        }
     }
 
     @keyframes movetoleft {
-        10%{
-            transform: translateX(0%); 
+        10% {
+            transform: translateX(0%);
         }
-        100%{
-            transform: translateX(-100%); 
+        100% {
+            transform: translateX(-100%);
+        }
+    }
+    @keyframes lineoftoast {
+        0% {
+            width: 100%;
+        }
+        100% {
+            width: 0%;
         }
     }
 }
